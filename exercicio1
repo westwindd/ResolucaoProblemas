@@ -1,0 +1,76 @@
+Exercicio 1 (municípios): 
+(a) Abordagem: Para armazenar informações sobre os municípios do Brasil, eu escolheria a abordagem de listas ligadas para lidar com colisões. Como o número de municípios varia consideravelmente, de apenas 15 em Roraima a 853 em Minas Gerais, é possível que ocorram colisões, e usar listas ligadas oferece flexibilidade para acomodar essas colisões sem a necessidade de rehashing ou aumento constante do tamanho da tabela.
+
+(b) Número de posições: O número de posições na tabela de espalhamento deve ser escolhido para acomodar todos os municípios, mas também para evitar um tamanho excessivamente grande que desperdice memória. Dado que o Brasil tem cerca de 5.565 municípios, eu escolheria um número próximo a esse valor, como 6.000 posições, para fornecer espaço adequado.
+
+(c) Função de espalhamento: A função de espalhamento é crucial para distribuir os municípios de forma uniforme na tabela e minimizar colisões. Uma abordagem simples para a função de espalhamento seria usar o hash do nome do município. Aqui está uma descrição em linguagem natural:
+
+"A função de espalhamento pode ser projetada da seguinte forma: primeiro, calculamos o valor hash do nome do município, usando um algoritmo de hash apropriado. Em seguida, aplicamos uma operação módulo ao valor hash, usando o número de posições na tabela, para mapear o município para uma posição na tabela de espalhamento. Certificamo-nos de que a operação de módulo resulte em um índice válido dentro do intervalo das posições na tabela."
+
+Exercício 9 (caminho minimo):
+O Problema do Caminho Mínimo é um dos problemas fundamentais em teoria dos grafos. Ele se concentra em encontrar o caminho mais curto entre dois vértices em um grafo ponderado, onde os pesos representam as distâncias, custos, tempo ou qualquer outra métrica associada às arestas do grafo. O objetivo é determinar o caminho que minimiza a soma dos pesos das arestas, ou seja, o caminho mais eficiente.
+
+Vou exemplificar o Problema do Caminho Mínimo em um grafo e, em seguida, mencionar três aplicações e três algoritmos relacionados a esse problema.
+
+Exemplo em um Grafo:
+
+Considere um grafo simples com alguns vértices e arestas, onde cada aresta possui um peso representando a distância entre os vértices:
+
+
+(A) --2-- (B) --5-- (C)
+ |       |       |
+  \--1-- /--2-- /
+
+Neste exemplo, suponha que queremos encontrar o caminho mínimo entre o vértice A e o vértice C. O Problema do Caminho Mínimo envolve encontrar o caminho que minimiza a soma dos pesos das arestas, que, neste caso, seria o caminho A -> B -> C, com um custo total de 2 + 5 = 7 unidades.
+
+Aplicações do Problema do Caminho Mínimo:
+
+    Redes de Transporte e GPS: O problema é comumente aplicado para determinar as rotas mais curtas em sistemas de navegação, como GPS, para minimizar o tempo de viagem ou distância percorrida.
+
+    Redes de Comunicação: Em redes de telecomunicações, como a internet, o Problema do Caminho Mínimo é usado para encontrar rotas eficientes para a transmissão de dados, minimizando a latência.
+
+    Logística e Distribuição: Empresas de logística usam o Problema do Caminho Mínimo para otimizar as rotas de entrega, reduzindo os custos de transporte e o tempo de entrega.
+
+Algoritmos para o Problema do Caminho Mínimo:
+
+    Algoritmo de Dijkstra: Este algoritmo encontra o caminho mínimo em um grafo ponderado com pesos não negativos. É muito utilizado em sistemas de navegação e em redes de computadores.
+
+    Algoritmo de Bellman-Ford: Este algoritmo lida com grafos que podem ter arestas com pesos negativos, desde que não haja ciclos de peso negativo. É usado em roteamento de rede e detecção de ciclos negativos.
+
+    Algoritmo de Floyd-Warshall: Este algoritmo encontra os caminhos mínimos entre todos os pares de vértices em um grafo ponderado. É útil quando é necessário encontrar os caminhos mínimos entre todos os vértices do grafo, como em sistemas de transporte público.
+
+Esses são apenas alguns exemplos de aplicações e algoritmos relacionados ao Problema do Caminho Mínimo. Dependendo do contexto e dos requisitos específicos, um desses algoritmos pode ser mais adequado para resolver o problema.
+
+Exercicio 8:
+O problema das Sete Pontes de Königsberg é um famoso problema matemático que deu origem à Teoria dos Grafos. Foi resolvido por Leonhard Euler em 1736 e é considerado o primeiro problema significativo em teoria dos grafos.
+
+O problema tem início na cidade de Königsberg, na Prússia Oriental (atualmente Kaliningrado, na Rússia), que era cortada pelo rio Pregel. Na cidade, havia duas grandes ilhas, chamadas Kneiphof e Lomse, e também duas partes do continente. Quatro pontes conectavam essas terras, como mostrado no esboço a seguir:
+
+        A
+       / \
+      |   |
+      |   |
+      |   |
+      |   |
+      |   |
+      |   |
+      |   |
+      B---C
+       \ /
+        D
+
+As letras A, B, C e D representam as terras, e as linhas representam as pontes. O desafio era encontrar um caminho que passasse por todas as pontes uma única vez e retornasse ao ponto de partida.
+
+No entanto, Euler percebeu que esse problema poderia ser simplificado. Ele criou um modelo abstrato do problema, representando as terras como vértices (A, B, C e D) e as pontes como arestas entre eles. O grafo resultante é o seguinte:
+
+
+   A --- B
+   |     |
+   |     |
+   C --- D
+
+Agora, em vez de encontrar um caminho que cruzasse todas as pontes, o problema se resumiu a determinar se era possível visitar todos os vértices desse grafo exatamente uma vez e retornar ao ponto de partida.
+
+Euler mostrou que a solução não era possível, e isso se deve ao fato de que, para que um grafo tenha um caminho que visite todos os vértices uma única vez (um "caminho euleriano"), todos os vértices, exceto possivelmente dois, devem ter um número par de arestas conectadas a eles. No grafo das Sete Pontes de Königsberg, todos os quatro vértices tinham um número ímpar de arestas conectadas, tornando impossível encontrar um caminho euleriano.
+
+Assim, o problema das Sete Pontes de Königsberg foi resolvido por Euler, e esse resultado fundamental deu origem à Teoria dos Grafos, uma área importante da matemática que estuda a estrutura e as propriedades dos grafos, sendo fundamental em várias aplicações, como redes de computadores, planejamento de rotas, análise de redes sociais e muito mais.
