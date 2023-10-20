@@ -51,7 +51,7 @@ public class Vizinhanca {
 
     private String dfs(int vertex, Set<String> visited) {
         visited.add(vertices[vertex]);
-        StringBuilder result = new StringBuilder(vertices[vertex] + " -> ");
+        StringBuilder result = new StringBuilder(vertices[vertex] + ", ");
         for (int i = 0; i < size; i++) {
             if (adjacencyMatrix[vertex][i] == 1 && !visited.contains(vertices[i])) {
                 result.append(dfs(i, visited)).append(", ");
